@@ -7,8 +7,8 @@ import pytesseract
 import telebot
 from telebot.types import InlineKeyboardButton, InlineKeyboardMarkup
 
-# توكن البوت مثبت مباشرة لضمان الاستقرار الفوري وتجنب مشاكل البيئة
-TOKEN = '9020627346:AAFHalAK34DXMyyRAUp50elLjI3vWokgwBQ'
+# التوكن الجديد المستخرج من الصورة
+TOKEN = '9020627346:AAFRbP46t0W-MaEyzzish2enwsH0rEwrfEE'
 bot = telebot.TeleBot(TOKEN)
 
 app = Flask(__name__)
@@ -306,7 +306,6 @@ def handle_callback_query(call):
       del sms_sessions[chat_id]
     return
 
-  # استخراج النص الأصلي للتشكيل والتدقيق
   if '💬 **النص الأصلي:**' in full_message_text:
     target_text = full_message_text.split('💬 **النص الأصلي:**')[-1].strip()
   elif '💬 **النص المستخرج:**' in full_message_text:
